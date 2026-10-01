@@ -1,0 +1,641 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Arquitectura Hexagonal · Users Management",
+    "output": "docs/architecture.html",
+    "quality_profile": "showcase",
+    "locale": "es",
+    "repository": {
+      "url": "git@github.com:JoseLuisArtetaBuelvas/users-management-spring-boot-hexagonal-ddd.git",
+      "provider": "github",
+      "link_mode": "local-only",
+      "revision": "697af7df862599ac90f548643db9797200a4b8ca"
+    }
+  },
+  "components": [
+    {
+      "id": "E1",
+      "type": "external",
+      "label": "REST Client",
+      "sublabel": "Postman · curl",
+      "pos": [
+        10,
+        250
+      ],
+      "size": [
+        124,
+        64
+      ]
+    },
+    {
+      "id": "E2",
+      "type": "database",
+      "label": "MySQL",
+      "sublabel": "crud_usuarios · users",
+      "pos": [
+        940,
+        940
+      ],
+      "size": [
+        180,
+        64
+      ]
+    },
+    {
+      "id": "E3",
+      "type": "external",
+      "label": "SMTP Relay",
+      "sublabel": "Gmail · STARTTLS",
+      "pos": [
+        660,
+        940
+      ],
+      "size": [
+        240,
+        64
+      ]
+    },
+    {
+      "id": "I1",
+      "type": "backend",
+      "label": "REST Entrypoint (driver)",
+      "sublabel": "UserRestController · AuthRestController",
+      "pos": [
+        200,
+        240
+      ],
+      "size": [
+        195,
+        80
+      ],
+      "sources": [
+        {
+          "path": "src/main/java/com/jcaa/usersmanagement/infrastructure/entrypoint/rest/controller/UserRestController.java",
+          "line": 32,
+          "end_line": 77
+        },
+        {
+          "path": "src/main/java/com/jcaa/usersmanagement/infrastructure/entrypoint/rest/controller/AuthRestController.java",
+          "line": 17,
+          "end_line": 34
+        }
+      ]
+    },
+    {
+      "id": "I2",
+      "type": "security",
+      "label": "Security Chain (stateless)",
+      "sublabel": "SecurityConfig · JwtAuthenticationFilter",
+      "pos": [
+        200,
+        480
+      ],
+      "size": [
+        195,
+        80
+      ],
+      "sources": [
+        {
+          "path": "src/main/java/com/jcaa/usersmanagement/infrastructure/security/SecurityConfig.java",
+          "line": 23,
+          "end_line": 59
+        }
+      ]
+    },
+    {
+      "id": "I3",
+      "type": "security",
+      "label": "JWT Token Service",
+      "sublabel": "HMAC · JwtProperties",
+      "pos": [
+        200,
+        360
+      ],
+      "size": [
+        195,
+        60
+      ],
+      "sources": [
+        {
+          "path": "src/main/java/com/jcaa/usersmanagement/infrastructure/security/JwtTokenService.java",
+          "line": 36,
+          "end_line": 57
+        }
+      ]
+    },
+    {
+      "id": "I4",
+      "type": "backend",
+      "label": "Desktop CLI Adapter (inactive)",
+      "sublabel": "UserController · not wired",
+      "tag": "inactive",
+      "pos": [
+        200,
+        58
+      ],
+      "size": [
+        214,
+        40
+      ],
+      "sources": [
+        {
+          "path": "src/main/java/com/jcaa/usersmanagement/infrastructure/entrypoint/desktop/controller/UserController.java",
+          "line": 19,
+          "end_line": 30
+        },
+        {
+          "path": "src/main/java/com/jcaa/usersmanagement/Main.java",
+          "line": 6,
+          "end_line": 11
+        }
+      ]
+    },
+    {
+      "id": "A1",
+      "type": "backend",
+      "label": "In Ports (driver)",
+      "sublabel": "6 use-case interfaces (driver)",
+      "pos": [
+        425,
+        150
+      ],
+      "size": [
+        190,
+        140
+      ],
+      "sources": [
+        {
+          "path": "src/main/java/com/jcaa/usersmanagement/application/port/in/CreateUserUseCase.java",
+          "line": 8,
+          "end_line": 9
+        },
+        {
+          "path": "src/main/java/com/jcaa/usersmanagement/application/port/in/LoginUseCase.java",
+          "line": 8,
+          "end_line": 9
+        },
+        {
+          "path": "src/main/java/com/jcaa/usersmanagement/application/port/in/GetAllUsersUseCase.java",
+          "line": 6,
+          "end_line": 7
+        }
+      ]
+    },
+    {
+      "id": "A2",
+      "type": "backend",
+      "label": "CRUD Use Cases",
+      "sublabel": "Create · Update · Delete · GetById · GetAll",
+      "pos": [
+        425,
+        460
+      ],
+      "size": [
+        280,
+        70
+      ],
+      "sources": [
+        {
+          "path": "src/main/java/com/jcaa/usersmanagement/application/service/CreateUserService.java",
+          "line": 31,
+          "end_line": 43
+        },
+        {
+          "path": "src/main/java/com/jcaa/usersmanagement/application/service/UpdateUserService.java",
+          "line": 33,
+          "end_line": 49
+        }
+      ]
+    },
+    {
+      "id": "A3",
+      "type": "backend",
+      "label": "Login Use Case",
+      "sublabel": "BCrypt · ACTIVE gate",
+      "pos": [
+        740,
+        460
+      ],
+      "size": [
+        190,
+        70
+      ],
+      "sources": [
+        {
+          "path": "src/main/java/com/jcaa/usersmanagement/application/service/LoginService.java",
+          "line": 26,
+          "end_line": 36
+        }
+      ]
+    },
+    {
+      "id": "A4",
+      "type": "backend",
+      "label": "Email Notification",
+      "sublabel": "EmailNotificationService · HTML templates",
+      "pos": [
+        425,
+        730
+      ],
+      "size": [
+        290,
+        60
+      ],
+      "sources": [
+        {
+          "path": "src/main/java/com/jcaa/usersmanagement/application/service/EmailNotificationService.java",
+          "line": 36,
+          "end_line": 66
+        }
+      ]
+    },
+    {
+      "id": "A5",
+      "type": "backend",
+      "label": "Out Ports (driven)",
+      "sublabel": "persistence · email out-ports",
+      "pos": [
+        940,
+        140
+      ],
+      "size": [
+        180,
+        150
+      ],
+      "sources": [
+        {
+          "path": "src/main/java/com/jcaa/usersmanagement/application/port/out/SaveUserPort.java",
+          "line": 5,
+          "end_line": 6
+        },
+        {
+          "path": "src/main/java/com/jcaa/usersmanagement/application/port/out/GetUserByEmailPort.java",
+          "line": 7,
+          "end_line": 8
+        },
+        {
+          "path": "src/main/java/com/jcaa/usersmanagement/application/port/out/EmailSenderPort.java",
+          "line": 5,
+          "end_line": 6
+        }
+      ]
+    },
+    {
+      "id": "D1",
+      "type": "backend",
+      "label": "Domain Core",
+      "sublabel": "UserModel immutable · VOs · events",
+      "pos": [
+        650,
+        140
+      ],
+      "size": [
+        240,
+        90
+      ],
+      "sources": [
+        {
+          "path": "src/main/java/com/jcaa/usersmanagement/domain/model/UserModel.java",
+          "line": 11,
+          "end_line": 36
+        },
+        {
+          "path": "src/main/java/com/jcaa/usersmanagement/domain/valueobject/UserPassword.java",
+          "line": 22,
+          "end_line": 47
+        }
+      ]
+    },
+    {
+      "id": "I5",
+      "type": "backend",
+      "label": "UserRepositoryMySQL",
+      "sublabel": "raw JDBC · 6 out-ports",
+      "pos": [
+        940,
+        650
+      ],
+      "size": [
+        180,
+        70
+      ],
+      "sources": [
+        {
+          "path": "src/main/java/com/jcaa/usersmanagement/infrastructure/adapter/persistence/repository/UserRepositoryMySQL.java",
+          "line": 31,
+          "end_line": 133
+        }
+      ]
+    },
+    {
+      "id": "I7",
+      "type": "backend",
+      "label": "DataSource Config",
+      "sublabel": "HikariCP · jdbc:mysql",
+      "pos": [
+        940,
+        800
+      ],
+      "size": [
+        180,
+        50
+      ],
+      "sources": [
+        {
+          "path": "src/main/java/com/jcaa/usersmanagement/infrastructure/config/DataSourceSpringConfig.java",
+          "line": 39,
+          "end_line": 53
+        },
+        {
+          "path": "src/main/java/com/jcaa/usersmanagement/infrastructure/adapter/persistence/config/DatabaseConfig.java",
+          "line": 3,
+          "end_line": 10
+        }
+      ]
+    },
+    {
+      "id": "I6",
+      "type": "backend",
+      "label": "JavaMailEmailSenderAdapter",
+      "sublabel": "javax.mail SMTP · text/html",
+      "pos": [
+        660,
+        650
+      ],
+      "size": [
+        240,
+        70
+      ],
+      "sources": [
+        {
+          "path": "src/main/java/com/jcaa/usersmanagement/infrastructure/adapter/email/JavaMailEmailSenderAdapter.java",
+          "line": 42,
+          "end_line": 86
+        }
+      ]
+    },
+    {
+      "id": "I8",
+      "type": "backend",
+      "label": "SMTP Config",
+      "sublabel": "host · port · auth",
+      "pos": [
+        660,
+        800
+      ],
+      "size": [
+        240,
+        50
+      ],
+      "sources": [
+        {
+          "path": "src/main/java/com/jcaa/usersmanagement/infrastructure/config/SmtpSpringConfig.java",
+          "line": 36,
+          "end_line": 39
+        }
+      ]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "Infrastructure · adapters · entrypoints · config",
+      "wraps": [
+        "I1",
+        "I2",
+        "I3",
+        "I4",
+        "I5",
+        "I6",
+        "I7",
+        "I8"
+      ]
+    },
+    {
+      "kind": "region",
+      "label": "Application · use cases · ports",
+      "wraps": [
+        "A1",
+        "A2",
+        "A3",
+        "A4",
+        "A5"
+      ]
+    },
+    {
+      "kind": "region",
+      "label": "Domain · pure business rules",
+      "wraps": [
+        "D1"
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "client-rest",
+      "from": "E1",
+      "to": "I1",
+      "label": "HTTP REST",
+      "variant": "emphasis"
+    },
+    {
+      "id": "client-authz",
+      "from": "E1",
+      "to": "I2",
+      "label": "Authorization: Bearer JWT",
+      "variant": "security"
+    },
+    {
+      "id": "chain-verify",
+      "from": "I2",
+      "to": "I3",
+      "label": "parse & verify",
+      "variant": "security",
+      "fromSide": "top",
+      "toSide": "bottom"
+    },
+    {
+      "id": "entry-issue-jwt",
+      "from": "I1",
+      "to": "I3",
+      "label": "generate JWT on login",
+      "fromSide": "right",
+      "toSide": "right",
+      "via": [
+        [
+          420,
+          280
+        ],
+        [
+          420,
+          390
+        ]
+      ],
+      "labelAt": [
+        452,
+        330
+      ]
+    },
+    {
+      "id": "entry-inports",
+      "from": "I1",
+      "to": "A1",
+      "label": "invokes use-case interfaces",
+      "fromSide": "right",
+      "toSide": "left",
+      "via": [
+        [
+          405,
+          280
+        ],
+        [
+          405,
+          220
+        ],
+        [
+          425,
+          220
+        ]
+      ]
+    },
+    {
+      "id": "inports-crud",
+      "from": "A1",
+      "to": "A2",
+      "label": "implemented by"
+    },
+    {
+      "id": "inports-login",
+      "from": "A1",
+      "to": "A3",
+      "label": "implemented by"
+    },
+    {
+      "id": "crud-domain",
+      "from": "A2",
+      "to": "D1",
+      "label": "constructs / uses aggregate"
+    },
+    {
+      "id": "login-domain",
+      "from": "A3",
+      "to": "D1",
+      "label": "verifyPlain · ACTIVE gate"
+    },
+    {
+      "id": "crud-email",
+      "from": "A2",
+      "to": "A4",
+      "label": "notifyUserCreated / notifyUserUpdated"
+    },
+    {
+      "id": "crud-out",
+      "from": "A2",
+      "to": "A5",
+      "label": "persistence ports"
+    },
+    {
+      "id": "login-out",
+      "from": "A3",
+      "to": "A5",
+      "label": "GetByEmailPort"
+    },
+    {
+      "id": "email-out",
+      "from": "A4",
+      "to": "A5",
+      "label": "EmailSenderPort.send()"
+    },
+    {
+      "id": "out-persist",
+      "from": "A5",
+      "to": "I5",
+      "label": "JDBC ports"
+    },
+    {
+      "id": "out-email",
+      "from": "A5",
+      "to": "I6",
+      "label": "SMTP ports"
+    },
+    {
+      "id": "persist-db",
+      "from": "I5",
+      "to": "E2",
+      "label": "JDBC SQL · users"
+    },
+    {
+      "id": "email-smtp",
+      "from": "I6",
+      "to": "E3",
+      "label": "SMTP · javax.mail"
+    },
+    {
+      "id": "ds-bean",
+      "from": "I7",
+      "to": "I5",
+      "label": "injects Hikari DataSource"
+    },
+    {
+      "id": "smtp-bean",
+      "from": "I8",
+      "to": "I6",
+      "label": "injects SmtpConfig"
+    },
+    {
+      "id": "desktop-inactive",
+      "from": "I4",
+      "to": "A1",
+      "label": "same in-ports · not wired by Main",
+      "variant": "dashed",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "via": [
+        [
+          307,
+          120
+        ],
+        [
+          520,
+          120
+        ],
+        [
+          520,
+          150
+        ]
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Domain",
+      "items": [
+        "UserModel immutable (@Value): factory create() y transiciones activate()/deactivate()",
+        "VOs: UserId · UserName · UserEmail · UserPassword (BCrypt cost 12) · enums UserRole/UserStatus · DomainEvents",
+        "Sin anotaciones de framework ni IO: nadie importa infraestructura desde aquí"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Application",
+      "items": [
+        "6 in-ports (casos de uso) y 7 out-ports desacoplan adaptadores de servicios",
+        "Servicios: CreateUserService · UpdateUserService · DeleteUserService · GetUserByIdService · GetAllUsersService · LoginService",
+        "EmailNotificationService renderiza plantillas HTML con tokens {{name}}/{{email}}/{{password}}/{{role}} y delega en EmailSenderPort"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Infrastructure",
+      "items": [
+        "UserRepositoryMySQL: raw JDBC, implementa los 6 puertos de persistencia",
+        "JavaMailEmailSenderAdapter: javax.mail (legacy), text/html, STARTTLS",
+        "Composition root Spring: DataSourceSpringConfig (HikariCP · jdbc:mysql) y SmtpSpringConfig (smtp.*)",
+        "Seguridad stateless: JwtAuthenticationFilter + SecurityConfig (permitAll solo login, POST /api/users y Swagger)",
+        "Desktop CLI presente pero inactivo: Main.java solo arranca la API REST"
+      ]
+    }
+  ]
+}

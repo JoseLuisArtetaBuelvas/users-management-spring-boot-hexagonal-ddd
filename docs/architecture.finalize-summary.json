@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "ok": false,
+  "command": "finalize",
+  "status": "fail",
+  "type": "architecture",
+  "quality": "showcase",
+  "specification": {
+    "path": "/tmp/opencode/finalize/.archify/architecture-users-management-20260930-150851/candidate.json",
+    "sha256": "4d29ecde500a064ca893dee89dc16e09cac3748d0cdcd866952dbbfdd0457e9c",
+    "bytes": 43155
+  },
+  "artifact": {
+    "path": "/tmp/opencode/finalize/docs/architecture.html",
+    "sha256": "902be29df62e102c27941641774cd4bf67f49f9402b71620b976d76b8eed83d7",
+    "bytes": 793134
+  },
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "fail"
+  },
+  "failedStage": "browser-check",
+  "diagnostics": [
+    {
+      "code": "viewer/browser-check-runtime",
+      "severity": "error",
+      "message": "browser-check could not complete its Chrome inspection.",
+      "subject": {
+        "artifact": "/tmp/opencode/finalize/docs/architecture.html"
+      },
+      "evidence": {
+        "reason": "Chrome DevTools read pipe failed: stream ended\nChrome process: still running.\nChrome stderr:\n[0930/152030.548:ERROR:chrome\\app\\chrome_main_delegate.cc:1164] Remote debugging pipe file descriptors are not open.\nChrome transport: Node v24.21.0, libuv 1.52.1, linux; pid=6422, exitCode=null, signalCode=null.\nChrome read pipe: readable=false, ended=true, destroyed=false, receivedBytes=0, messages=0, bufferedBytes=0.\nChrome write pipe: writable=true, ended=false, destroyed=false, completedWrites=1, writtenBytes=50, bufferedBytes=0."
+      },
+      "supportedFixes": [
+        "resolve the reported Chrome inspection error, then rerun browser-check"
+      ]
+    }
+  ],
+  "diagnosticSummary": {
+    "total": 1,
+    "shown": 1,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "/tmp/opencode/finalize/docs/architecture.finalize.json",
+    "summaryReceipt": "/tmp/opencode/finalize/docs/architecture.finalize-summary.json",
+    "browserCheckReceipt": "/tmp/opencode/finalize/docs/architecture.browser-check.json"
+  },
+  "update": {
+    "status": "current",
+    "installedVersion": "3.0.1",
+    "availableVersion": "3.0.1",
+    "releaseNotes": null,
+    "checkedAt": "2026-09-30T20:20:22.175Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  },
+  "visualReview": "not-requested",
+  "durationMs": 944
+}
