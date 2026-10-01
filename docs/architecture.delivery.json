@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "48cea354-0d8c-42d4-b981-122cefadc81d",
+  "status": "current",
+  "command": "deliver",
+  "type": "architecture",
+  "input": "/tmp/opencode/finalize/.archify/architecture-users-management-20260930-150851/candidate.json",
+  "output": "/tmp/opencode/finalize/docs/architecture.html",
+  "specification": {
+    "sha256": "4d29ecde500a064ca893dee89dc16e09cac3748d0cdcd866952dbbfdd0457e9c",
+    "bytes": 43155
+  },
+  "artifact": {
+    "sha256": "902be29df62e102c27941641774cd4bf67f49f9402b71620b976d76b8eed83d7",
+    "bytes": 793134
+  }
+}

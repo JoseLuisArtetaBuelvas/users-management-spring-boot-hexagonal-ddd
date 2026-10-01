@@ -1,0 +1,679 @@
+{
+  "schemaVersion": 1,
+  "ok": false,
+  "command": "finalize",
+  "status": "fail",
+  "type": "architecture",
+  "quality": "showcase",
+  "startedAt": "2026-09-30T20:20:29.935Z",
+  "specification": {
+    "path": "/tmp/opencode/finalize/.archify/architecture-users-management-20260930-150851/candidate.json",
+    "sha256": "4d29ecde500a064ca893dee89dc16e09cac3748d0cdcd866952dbbfdd0457e9c",
+    "bytes": 43155
+  },
+  "artifact": {
+    "path": "/tmp/opencode/finalize/docs/architecture.html",
+    "sha256": "902be29df62e102c27941641774cd4bf67f49f9402b71620b976d76b8eed83d7",
+    "bytes": 793134
+  },
+  "stages": {
+    "validate": {
+      "status": "pass",
+      "exitCode": 0,
+      "durationMs": null,
+      "execution": "embedded-in-deliver",
+      "command": [
+        "/home/nja50/.nvm/versions/node/v24.21.0/bin/node",
+        "/home/nja50/.agents/skills/archify/bin/archify.mjs",
+        "deliver",
+        "architecture",
+        "/tmp/opencode/finalize/.archify/architecture-users-management-20260930-150851/candidate.json",
+        "/tmp/opencode/finalize/docs/architecture.html",
+        "--quality",
+        "showcase",
+        "--repo-root",
+        "/tmp/opencode/finalize",
+        "--json"
+      ],
+      "receipt": {
+        "schemaVersion": 1,
+        "ok": true,
+        "command": "validate",
+        "specification": {
+          "sha256": "4d29ecde500a064ca893dee89dc16e09cac3748d0cdcd866952dbbfdd0457e9c",
+          "bytes": 43155
+        },
+        "validation": {
+          "checksPassed": 9,
+          "checkCount": 9,
+          "compositionProfile": "showcase",
+          "compositionStatus": "pass",
+          "errors": 0,
+          "warnings": 0
+        }
+      }
+    },
+    "deliver": {
+      "status": "pass",
+      "exitCode": 0,
+      "durationMs": 695,
+      "command": [
+        "/home/nja50/.nvm/versions/node/v24.21.0/bin/node",
+        "/home/nja50/.agents/skills/archify/bin/archify.mjs",
+        "deliver",
+        "architecture",
+        "/tmp/opencode/finalize/.archify/architecture-users-management-20260930-150851/candidate.json",
+        "/tmp/opencode/finalize/docs/architecture.html",
+        "--quality",
+        "showcase",
+        "--repo-root",
+        "/tmp/opencode/finalize",
+        "--json"
+      ],
+      "receipt": {
+        "schemaVersion": 1,
+        "receiptId": "48cea354-0d8c-42d4-b981-122cefadc81d",
+        "ok": true,
+        "command": "deliver",
+        "type": "architecture",
+        "input": "/tmp/opencode/finalize/.archify/architecture-users-management-20260930-150851/candidate.json",
+        "output": "/tmp/opencode/finalize/docs/architecture.html",
+        "specification": {
+          "sha256": "4d29ecde500a064ca893dee89dc16e09cac3748d0cdcd866952dbbfdd0457e9c",
+          "bytes": 43155
+        },
+        "artifact": {
+          "sha256": "902be29df62e102c27941641774cd4bf67f49f9402b71620b976d76b8eed83d7",
+          "bytes": 793134
+        },
+        "validation": {
+          "checksPassed": 9,
+          "checkCount": 9,
+          "compositionProfile": "showcase",
+          "compositionStatus": "pass",
+          "errors": 0,
+          "warnings": 0
+        },
+        "evidence": {
+          "verified": true,
+          "repository": "git@github.com:JoseLuisArtetaBuelvas/users-management-spring-boot-hexagonal-ddd",
+          "revision": "697af7df862599ac90f548643db9797200a4b8ca",
+          "references": 23,
+          "linkMode": "local-only"
+        },
+        "update": {
+          "status": "unavailable",
+          "installedVersion": null,
+          "availableVersion": null,
+          "releaseNotes": null,
+          "checkedAt": null,
+          "source": null,
+          "noticeRequired": false,
+          "noticeText": null,
+          "reason": "disabled"
+        }
+      }
+    },
+    "check": {
+      "status": "pass",
+      "exitCode": 0,
+      "durationMs": 149,
+      "command": [
+        "/home/nja50/.nvm/versions/node/v24.21.0/bin/node",
+        "/home/nja50/.agents/skills/archify/bin/archify.mjs",
+        "check",
+        "/tmp/opencode/finalize/docs/architecture.html",
+        "--require-provenance"
+      ],
+      "receipt": {
+        "ok": true,
+        "file": "/tmp/opencode/finalize/docs/architecture.html",
+        "artifact": {
+          "sha256": "902be29df62e102c27941641774cd4bf67f49f9402b71620b976d76b8eed83d7",
+          "bytes": 793134
+        },
+        "checks": [
+          {
+            "name": "single_svg",
+            "ok": true,
+            "details": [
+              "found 1 <svg> block(s)"
+            ]
+          },
+          {
+            "name": "finite_svg",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "orthogonal_arrows",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "label_route_clearance",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "relationship_crossings",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "relationship_corridors",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "container_border_runs",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "route_rhythm",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "legend_clearance",
+            "ok": true,
+            "details": []
+          }
+        ],
+        "composition": {
+          "schemaVersion": 1,
+          "profile": "showcase",
+          "status": "pass",
+          "summary": {
+            "errors": 0,
+            "warnings": 0
+          },
+          "metrics": {
+            "properCrossings": 0,
+            "resolvedCrossovers": 8,
+            "ambiguousCorridors": 0,
+            "arrowheadCollisions": 0,
+            "containerBorderRuns": 0,
+            "labelRouteClearanceIssues": 0,
+            "labelCanvasOverflowIssues": 0,
+            "minLabelRouteClearance": 5,
+            "desktopReadabilityIssues": 0,
+            "viewportHeightIssues": 0,
+            "minProjectedNodeTextPx": 6.017647058823529,
+            "maxBends": 4,
+            "routesOverSuggestedBends": 7,
+            "maxStretch": 2.304,
+            "routesOverSuggestedStretch": 2,
+            "minSegmentPx": 10,
+            "minInteriorSegmentPx": 28,
+            "shortSegmentCount": 1,
+            "shortEndpointSegmentCount": 1,
+            "shortInteriorSegmentCount": 0,
+            "microSegmentCount": 0
+          },
+          "suggestedLimits": {
+            "bendsPerRelationship": 2,
+            "stretch": 1.35,
+            "segmentPx": 16,
+            "microSegmentPx": 8
+          },
+          "routeReview": {
+            "crossings": [
+              {
+                "left": {
+                  "id": "inports-login",
+                  "from": "A1",
+                  "to": "A3",
+                  "label": "implemented by",
+                  "collectionIndex": 6,
+                  "artifactIndex": 7
+                },
+                "right": {
+                  "id": "crud-domain",
+                  "from": "A2",
+                  "to": "D1",
+                  "label": "constructs / uses aggregate",
+                  "collectionIndex": 7,
+                  "artifactIndex": 8
+                },
+                "point": [
+                  694,
+                  345
+                ]
+              },
+              {
+                "left": {
+                  "id": "inports-login",
+                  "from": "A1",
+                  "to": "A3",
+                  "label": "implemented by",
+                  "collectionIndex": 6,
+                  "artifactIndex": 7
+                },
+                "right": {
+                  "id": "crud-out",
+                  "from": "A2",
+                  "to": "A5",
+                  "label": "persistence ports",
+                  "collectionIndex": 10,
+                  "artifactIndex": 11
+                },
+                "point": [
+                  821,
+                  423
+                ]
+              },
+              {
+                "left": {
+                  "id": "login-domain",
+                  "from": "A3",
+                  "to": "D1",
+                  "label": "verifyPlain · ACTIVE gate",
+                  "collectionIndex": 8,
+                  "artifactIndex": 9
+                },
+                "right": {
+                  "id": "crud-out",
+                  "from": "A2",
+                  "to": "A5",
+                  "label": "persistence ports",
+                  "collectionIndex": 10,
+                  "artifactIndex": 11
+                },
+                "point": [
+                  835,
+                  423
+                ]
+              },
+              {
+                "left": {
+                  "id": "crud-out",
+                  "from": "A2",
+                  "to": "A5",
+                  "label": "persistence ports",
+                  "collectionIndex": 10,
+                  "artifactIndex": 11
+                },
+                "right": {
+                  "id": "login-out",
+                  "from": "A3",
+                  "to": "A5",
+                  "label": "GetByEmailPort",
+                  "collectionIndex": 11,
+                  "artifactIndex": 12
+                },
+                "point": [
+                  916,
+                  423
+                ],
+                "sharedNode": "A5"
+              },
+              {
+                "left": {
+                  "id": "crud-out",
+                  "from": "A2",
+                  "to": "A5",
+                  "label": "persistence ports",
+                  "collectionIndex": 10,
+                  "artifactIndex": 11
+                },
+                "right": {
+                  "id": "out-email",
+                  "from": "A5",
+                  "to": "I6",
+                  "label": "SMTP ports",
+                  "collectionIndex": 14,
+                  "artifactIndex": 15
+                },
+                "point": [
+                  989,
+                  423
+                ],
+                "sharedNode": "A5"
+              },
+              {
+                "left": {
+                  "id": "email-out",
+                  "from": "A4",
+                  "to": "A5",
+                  "label": "EmailSenderPort.send()",
+                  "collectionIndex": 12,
+                  "artifactIndex": 13
+                },
+                "right": {
+                  "id": "out-persist",
+                  "from": "A5",
+                  "to": "I5",
+                  "label": "JDBC ports",
+                  "collectionIndex": 13,
+                  "artifactIndex": 14
+                },
+                "point": [
+                  1030,
+                  563
+                ],
+                "sharedNode": "A5"
+              },
+              {
+                "left": {
+                  "id": "email-out",
+                  "from": "A4",
+                  "to": "A5",
+                  "label": "EmailSenderPort.send()",
+                  "collectionIndex": 12,
+                  "artifactIndex": 13
+                },
+                "right": {
+                  "id": "out-email",
+                  "from": "A5",
+                  "to": "I6",
+                  "label": "SMTP ports",
+                  "collectionIndex": 14,
+                  "artifactIndex": 15
+                },
+                "point": [
+                  989,
+                  563
+                ],
+                "sharedNode": "A5"
+              },
+              {
+                "left": {
+                  "id": "email-smtp",
+                  "from": "I6",
+                  "to": "E3",
+                  "label": "SMTP · javax.mail",
+                  "collectionIndex": 16,
+                  "artifactIndex": 17
+                },
+                "right": {
+                  "id": "smtp-bean",
+                  "from": "I8",
+                  "to": "I6",
+                  "label": "injects SmtpConfig",
+                  "collectionIndex": 18,
+                  "artifactIndex": 19
+                },
+                "point": [
+                  787,
+                  792
+                ],
+                "sharedNode": "I6"
+              }
+            ],
+            "detours": [
+              {
+                "relationship": {
+                  "id": "client-authz",
+                  "from": "E1",
+                  "to": "I2",
+                  "label": "Authorization: Bearer JWT",
+                  "collectionIndex": 1,
+                  "artifactIndex": 2
+                },
+                "bends": 3,
+                "stretch": 1
+              },
+              {
+                "relationship": {
+                  "id": "entry-issue-jwt",
+                  "from": "I1",
+                  "to": "I3",
+                  "label": "generate JWT on login",
+                  "collectionIndex": 3,
+                  "artifactIndex": 4
+                },
+                "bends": 2,
+                "stretch": 1.455
+              },
+              {
+                "relationship": {
+                  "id": "inports-login",
+                  "from": "A1",
+                  "to": "A3",
+                  "label": "implemented by",
+                  "collectionIndex": 6,
+                  "artifactIndex": 7
+                },
+                "bends": 4,
+                "stretch": 1
+              },
+              {
+                "relationship": {
+                  "id": "login-out",
+                  "from": "A3",
+                  "to": "A5",
+                  "label": "GetByEmailPort",
+                  "collectionIndex": 11,
+                  "artifactIndex": 12
+                },
+                "bends": 3,
+                "stretch": 1
+              },
+              {
+                "relationship": {
+                  "id": "email-out",
+                  "from": "A4",
+                  "to": "A5",
+                  "label": "EmailSenderPort.send()",
+                  "collectionIndex": 12,
+                  "artifactIndex": 13
+                },
+                "bends": 4,
+                "stretch": 1.224
+              },
+              {
+                "relationship": {
+                  "id": "out-email",
+                  "from": "A5",
+                  "to": "I6",
+                  "label": "SMTP ports",
+                  "collectionIndex": 14,
+                  "artifactIndex": 15
+                },
+                "bends": 4,
+                "stretch": 1
+              },
+              {
+                "relationship": {
+                  "id": "persist-db",
+                  "from": "I5",
+                  "to": "E2",
+                  "label": "JDBC SQL · users",
+                  "collectionIndex": 15,
+                  "artifactIndex": 16
+                },
+                "bends": 3,
+                "stretch": 1.143,
+                "directCorridorBlockers": [
+                  {
+                    "id": "I7",
+                    "label": "DataSource Config",
+                    "box": [
+                      940,
+                      800,
+                      180,
+                      50
+                    ]
+                  }
+                ]
+              },
+              {
+                "relationship": {
+                  "id": "email-smtp",
+                  "from": "I6",
+                  "to": "E3",
+                  "label": "SMTP · javax.mail",
+                  "collectionIndex": 16,
+                  "artifactIndex": 17
+                },
+                "bends": 4,
+                "stretch": 2.304,
+                "directCorridorBlockers": [
+                  {
+                    "id": "I8",
+                    "label": "SMTP Config",
+                    "box": [
+                      660,
+                      800,
+                      240,
+                      50
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "leadingSpace": {
+            "measured": true,
+            "emptyTopPx": 28,
+            "emptyTopRatio": 0.026,
+            "occupiedTop": 28,
+            "viewBoxTop": 0,
+            "canvasHeight": 1072,
+            "typicalNodeHeight": 70,
+            "reviewSuggested": false
+          },
+          "desktopReadability": {
+            "budgetBasis": "legacy-930",
+            "readerContract": "declared-wide-v1",
+            "availableDiagramWidth": 930,
+            "actualBudgetPx": 930,
+            "limit": "legacy",
+            "requestedTargetPx": 7.5,
+            "requestedTargetMet": false,
+            "hardFloorPx": 6,
+            "hardFloorMet": true,
+            "minimumOwner": {
+              "kind": "node",
+              "id": "I2"
+            },
+            "minimumSourceTextPx": 7.7,
+            "minimumProjectedTextPx": 6.017647058823529,
+            "semanticTextCount": 57
+          },
+          "issues": []
+        },
+        "provenance": "current",
+        "deliveryReceiptId": "48cea354-0d8c-42d4-b981-122cefadc81d"
+      }
+    },
+    "browser-check": {
+      "status": "fail",
+      "exitCode": 1,
+      "durationMs": 20,
+      "command": [
+        "/home/nja50/.nvm/versions/node/v24.21.0/bin/node",
+        "/home/nja50/.agents/skills/archify/bin/archify.mjs",
+        "browser-check",
+        "/tmp/opencode/finalize/docs/architecture.html",
+        "--json",
+        "--require-provenance"
+      ],
+      "execution": "in-process",
+      "receipt": {
+        "schemaVersion": 1,
+        "ok": false,
+        "command": "browser-check",
+        "evidenceKind": "automated-browser",
+        "status": "fail",
+        "visualReview": "not-requested",
+        "provenance": "current",
+        "deliveryReceiptId": "48cea354-0d8c-42d4-b981-122cefadc81d",
+        "artifact": {
+          "path": "/tmp/opencode/finalize/docs/architecture.html",
+          "sha256": "902be29df62e102c27941641774cd4bf67f49f9402b71620b976d76b8eed83d7",
+          "bytes": 793134
+        },
+        "state": {
+          "detail": "read",
+          "motion": "still"
+        },
+        "chrome": {
+          "status": "available",
+          "executable": "/mnt/c/Program Files/Google/Chrome/Application/chrome.exe"
+        },
+        "diagnostics": [
+          {
+            "code": "viewer/browser-check-runtime",
+            "severity": "error",
+            "message": "browser-check could not complete its Chrome inspection.",
+            "subject": {
+              "artifact": "/tmp/opencode/finalize/docs/architecture.html"
+            },
+            "evidence": {
+              "reason": "Chrome DevTools read pipe failed: stream ended\nChrome process: still running.\nChrome stderr:\n[0930/152030.548:ERROR:chrome\\app\\chrome_main_delegate.cc:1164] Remote debugging pipe file descriptors are not open.\nChrome transport: Node v24.21.0, libuv 1.52.1, linux; pid=6422, exitCode=null, signalCode=null.\nChrome read pipe: readable=false, ended=true, destroyed=false, receivedBytes=0, messages=0, bufferedBytes=0.\nChrome write pipe: writable=true, ended=false, destroyed=false, completedWrites=1, writtenBytes=50, bufferedBytes=0."
+            },
+            "supportedFixes": [
+              "resolve the reported Chrome inspection error, then rerun browser-check"
+            ]
+          }
+        ],
+        "containment": {
+          "status": "fail",
+          "policy": "fit-or-reader-declared-readable-vertical-scroll",
+          "viewports": []
+        },
+        "themeStates": {
+          "status": "fail",
+          "viewports": []
+        },
+        "readability": {
+          "status": "fail",
+          "minimumProjectedNodeTextPx": 6,
+          "viewports": []
+        },
+        "viewerChrome": {
+          "status": "fail",
+          "viewports": []
+        },
+        "captures": {
+          "status": "not-requested",
+          "screenshots": [],
+          "contactSheet": null
+        },
+        "sidecars": {
+          "receipt": "architecture.browser-check.json",
+          "files": []
+        },
+        "error": "Chrome DevTools read pipe failed: stream ended\nChrome process: still running.\nChrome stderr:\n[0930/152030.548:ERROR:chrome\\app\\chrome_main_delegate.cc:1164] Remote debugging pipe file descriptors are not open.\nChrome transport: Node v24.21.0, libuv 1.52.1, linux; pid=6422, exitCode=null, signalCode=null.\nChrome read pipe: readable=false, ended=true, destroyed=false, receivedBytes=0, messages=0, bufferedBytes=0.\nChrome write pipe: writable=true, ended=false, destroyed=false, completedWrites=1, writtenBytes=50, bufferedBytes=0."
+      }
+    }
+  },
+  "diagnostics": [
+    {
+      "code": "viewer/browser-check-runtime",
+      "severity": "error",
+      "message": "browser-check could not complete its Chrome inspection.",
+      "subject": {
+        "artifact": "/tmp/opencode/finalize/docs/architecture.html"
+      },
+      "evidence": {
+        "reason": "Chrome DevTools read pipe failed: stream ended\nChrome process: still running.\nChrome stderr:\n[0930/152030.548:ERROR:chrome\\app\\chrome_main_delegate.cc:1164] Remote debugging pipe file descriptors are not open.\nChrome transport: Node v24.21.0, libuv 1.52.1, linux; pid=6422, exitCode=null, signalCode=null.\nChrome read pipe: readable=false, ended=true, destroyed=false, receivedBytes=0, messages=0, bufferedBytes=0.\nChrome write pipe: writable=true, ended=false, destroyed=false, completedWrites=1, writtenBytes=50, bufferedBytes=0."
+      },
+      "supportedFixes": [
+        "resolve the reported Chrome inspection error, then rerun browser-check"
+      ]
+    }
+  ],
+  "evidence": {
+    "receipt": "/tmp/opencode/finalize/docs/architecture.finalize.json",
+    "summaryReceipt": "/tmp/opencode/finalize/docs/architecture.finalize-summary.json",
+    "browserCheckReceipt": "/tmp/opencode/finalize/docs/architecture.browser-check.json"
+  },
+  "visualReview": "not-requested",
+  "failedStage": "browser-check",
+  "finishedAt": "2026-09-30T20:20:30.880Z",
+  "durationMs": 944,
+  "update": {
+    "status": "current",
+    "installedVersion": "3.0.1",
+    "availableVersion": "3.0.1",
+    "releaseNotes": null,
+    "checkedAt": "2026-09-30T20:20:22.175Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  }
+}

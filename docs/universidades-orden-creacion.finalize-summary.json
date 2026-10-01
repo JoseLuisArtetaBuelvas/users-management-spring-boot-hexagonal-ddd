@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "ok": false,
+  "command": "finalize",
+  "status": "skipped",
+  "type": "workflow",
+  "quality": "showcase",
+  "specification": {
+    "path": "/tmp/opencode/finalize/candidate.json",
+    "sha256": "9ffb4c52af6288dea3cf41a5e80285fc7e6a3af97f8c118759b4e2317a60d47e",
+    "bytes": 41763
+  },
+  "artifact": {
+    "path": "/tmp/opencode/finalize/docs/universidades-orden-creacion.html",
+    "sha256": "bc49963b69b1e86fe674547eb3eca4804ff9c73456337695919a6fa2e8f794c6",
+    "bytes": 779450
+  },
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "skipped"
+  },
+  "failedStage": "browser-check",
+  "diagnostics": [
+    {
+      "code": "viewer/chrome-unavailable",
+      "severity": "warning",
+      "message": "Chrome or Chromium is unavailable. Set ARCHIFY_CHROME to its executable path.",
+      "subject": {
+        "artifact": "/tmp/opencode/finalize/docs/universidades-orden-creacion.html"
+      },
+      "evidence": {
+        "executable": null
+      },
+      "supportedFixes": [
+        "set ARCHIFY_CHROME to a Chrome or Chromium executable and rerun browser-check"
+      ]
+    }
+  ],
+  "diagnosticSummary": {
+    "total": 1,
+    "shown": 1,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "/tmp/opencode/finalize/docs/universidades-orden-creacion.finalize.json",
+    "summaryReceipt": "/tmp/opencode/finalize/docs/universidades-orden-creacion.finalize-summary.json",
+    "browserCheckReceipt": "/tmp/opencode/finalize/docs/universidades-orden-creacion.browser-check.json"
+  },
+  "update": {
+    "status": "current",
+    "installedVersion": "3.0.1",
+    "availableVersion": "3.0.1",
+    "releaseNotes": null,
+    "checkedAt": "2026-09-30T20:20:22.175Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  },
+  "visualReview": "not-requested",
+  "durationMs": 766
+}

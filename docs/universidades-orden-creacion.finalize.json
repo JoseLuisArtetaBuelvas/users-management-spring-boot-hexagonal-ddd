@@ -1,0 +1,455 @@
+{
+  "schemaVersion": 1,
+  "ok": false,
+  "command": "finalize",
+  "status": "skipped",
+  "type": "workflow",
+  "quality": "showcase",
+  "startedAt": "2026-10-01T05:29:27.270Z",
+  "specification": {
+    "path": "/tmp/opencode/finalize/candidate.json",
+    "sha256": "9ffb4c52af6288dea3cf41a5e80285fc7e6a3af97f8c118759b4e2317a60d47e",
+    "bytes": 41763
+  },
+  "artifact": {
+    "path": "/tmp/opencode/finalize/docs/universidades-orden-creacion.html",
+    "sha256": "bc49963b69b1e86fe674547eb3eca4804ff9c73456337695919a6fa2e8f794c6",
+    "bytes": 779450
+  },
+  "stages": {
+    "validate": {
+      "status": "pass",
+      "exitCode": 0,
+      "durationMs": null,
+      "execution": "embedded-in-deliver",
+      "command": [
+        "/home/nja50/.nvm/versions/node/v24.21.0/bin/node",
+        "/home/nja50/.agents/skills/archify/bin/archify.mjs",
+        "deliver",
+        "workflow",
+        "/tmp/opencode/finalize/candidate.json",
+        "/tmp/opencode/finalize/docs/universidades-orden-creacion.html",
+        "--quality",
+        "showcase",
+        "--repo-root",
+        "/tmp/opencode/finalize/repo",
+        "--json"
+      ],
+      "receipt": {
+        "schemaVersion": 1,
+        "ok": true,
+        "command": "validate",
+        "specification": {
+          "sha256": "9ffb4c52af6288dea3cf41a5e80285fc7e6a3af97f8c118759b4e2317a60d47e",
+          "bytes": 41763
+        },
+        "validation": {
+          "checksPassed": 9,
+          "checkCount": 9,
+          "compositionProfile": "showcase",
+          "compositionStatus": "pass",
+          "errors": 0,
+          "warnings": 0
+        }
+      }
+    },
+    "deliver": {
+      "status": "pass",
+      "exitCode": 0,
+      "durationMs": 489,
+      "command": [
+        "/home/nja50/.nvm/versions/node/v24.21.0/bin/node",
+        "/home/nja50/.agents/skills/archify/bin/archify.mjs",
+        "deliver",
+        "workflow",
+        "/tmp/opencode/finalize/candidate.json",
+        "/tmp/opencode/finalize/docs/universidades-orden-creacion.html",
+        "--quality",
+        "showcase",
+        "--repo-root",
+        "/tmp/opencode/finalize/repo",
+        "--json"
+      ],
+      "receipt": {
+        "schemaVersion": 1,
+        "receiptId": "c057cd17-424c-4a36-819c-de3f68a1bd7d",
+        "ok": true,
+        "command": "deliver",
+        "type": "workflow",
+        "input": "/tmp/opencode/finalize/candidate.json",
+        "output": "/tmp/opencode/finalize/docs/universidades-orden-creacion.html",
+        "specification": {
+          "sha256": "9ffb4c52af6288dea3cf41a5e80285fc7e6a3af97f8c118759b4e2317a60d47e",
+          "bytes": 41763
+        },
+        "artifact": {
+          "sha256": "bc49963b69b1e86fe674547eb3eca4804ff9c73456337695919a6fa2e8f794c6",
+          "bytes": 779450
+        },
+        "validation": {
+          "checksPassed": 9,
+          "checkCount": 9,
+          "compositionProfile": "showcase",
+          "compositionStatus": "pass",
+          "errors": 0,
+          "warnings": 0
+        },
+        "evidence": {
+          "verified": true,
+          "repository": "git@github.com:JoseLuisArtetaBuelvas/users-management-spring-boot-hexagonal-ddd",
+          "revision": "697af7df862599ac90f548643db9797200a4b8ca",
+          "references": 16,
+          "linkMode": "local-only"
+        },
+        "update": {
+          "status": "unavailable",
+          "installedVersion": null,
+          "availableVersion": null,
+          "releaseNotes": null,
+          "checkedAt": null,
+          "source": null,
+          "noticeRequired": false,
+          "noticeText": null,
+          "reason": "disabled"
+        }
+      }
+    },
+    "check": {
+      "status": "pass",
+      "exitCode": 0,
+      "durationMs": 111,
+      "command": [
+        "/home/nja50/.nvm/versions/node/v24.21.0/bin/node",
+        "/home/nja50/.agents/skills/archify/bin/archify.mjs",
+        "check",
+        "/tmp/opencode/finalize/docs/universidades-orden-creacion.html",
+        "--require-provenance"
+      ],
+      "receipt": {
+        "ok": true,
+        "file": "/tmp/opencode/finalize/docs/universidades-orden-creacion.html",
+        "artifact": {
+          "sha256": "bc49963b69b1e86fe674547eb3eca4804ff9c73456337695919a6fa2e8f794c6",
+          "bytes": 779450
+        },
+        "checks": [
+          {
+            "name": "single_svg",
+            "ok": true,
+            "details": [
+              "found 1 <svg> block(s)"
+            ]
+          },
+          {
+            "name": "finite_svg",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "orthogonal_arrows",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "label_route_clearance",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "relationship_crossings",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "relationship_corridors",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "container_border_runs",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "route_rhythm",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "legend_clearance",
+            "ok": true,
+            "details": []
+          }
+        ],
+        "composition": {
+          "schemaVersion": 1,
+          "profile": "showcase",
+          "status": "pass",
+          "summary": {
+            "errors": 0,
+            "warnings": 0
+          },
+          "metrics": {
+            "properCrossings": 0,
+            "resolvedCrossovers": 0,
+            "ambiguousCorridors": 0,
+            "arrowheadCollisions": 0,
+            "containerBorderRuns": 0,
+            "labelRouteClearanceIssues": 0,
+            "labelCanvasOverflowIssues": 0,
+            "minLabelRouteClearance": 49,
+            "desktopReadabilityIssues": 0,
+            "viewportHeightIssues": 0,
+            "minProjectedNodeTextPx": 6.027777777777779,
+            "maxBends": 4,
+            "routesOverSuggestedBends": 5,
+            "maxStretch": 9.277,
+            "routesOverSuggestedStretch": 3,
+            "minSegmentPx": 16,
+            "minInteriorSegmentPx": 48,
+            "shortSegmentCount": 0,
+            "shortEndpointSegmentCount": 0,
+            "shortInteriorSegmentCount": 0,
+            "microSegmentCount": 0
+          },
+          "suggestedLimits": {
+            "bendsPerRelationship": 2,
+            "stretch": 1.35,
+            "segmentPx": 16,
+            "microSegmentPx": 8
+          },
+          "routeReview": {
+            "crossings": [],
+            "detours": [
+              {
+                "relationship": {
+                  "id": "e-dto-mapper",
+                  "from": "dto-command",
+                  "to": "mapper-aplicacion",
+                  "label": "",
+                  "collectionIndex": 0,
+                  "artifactIndex": 1
+                },
+                "bends": 2,
+                "stretch": 9.277
+              },
+              {
+                "relationship": {
+                  "id": "e-in-out",
+                  "from": "puertos-in",
+                  "to": "puertos-out",
+                  "label": "",
+                  "collectionIndex": 3,
+                  "artifactIndex": 4
+                },
+                "bends": 2,
+                "stretch": 5.975
+              },
+              {
+                "relationship": {
+                  "id": "e-modelo-in",
+                  "from": "modelo-universidad",
+                  "to": "puertos-in",
+                  "label": "define casos de uso",
+                  "collectionIndex": 6,
+                  "artifactIndex": 7
+                },
+                "bends": 3,
+                "stretch": 1
+              },
+              {
+                "relationship": {
+                  "id": "e-out-dto",
+                  "from": "puertos-out",
+                  "to": "dto-command",
+                  "label": "",
+                  "collectionIndex": 7,
+                  "artifactIndex": 8
+                },
+                "bends": 4,
+                "stretch": 1
+              },
+              {
+                "relationship": {
+                  "id": "e-repo-rest",
+                  "from": "repository-mysql",
+                  "to": "controller-rest",
+                  "label": "expone API",
+                  "collectionIndex": 10,
+                  "artifactIndex": 11
+                },
+                "bends": 3,
+                "stretch": 2.693
+              },
+              {
+                "relationship": {
+                  "id": "e-schema-enums",
+                  "from": "schema-universidades",
+                  "to": "enums-universidad",
+                  "label": "patrón users",
+                  "collectionIndex": 11,
+                  "artifactIndex": 12
+                },
+                "bends": 4,
+                "stretch": 1.126
+              },
+              {
+                "relationship": {
+                  "id": "e-svc-repo",
+                  "from": "servicios",
+                  "to": "repository-mysql",
+                  "label": "usa el adaptador",
+                  "collectionIndex": 12,
+                  "artifactIndex": 13
+                },
+                "bends": 4,
+                "stretch": 1
+              }
+            ]
+          },
+          "leadingSpace": {
+            "measured": false,
+            "reviewSuggested": false
+          },
+          "desktopReadability": {
+            "budgetBasis": "legacy-930",
+            "readerContract": "declared-wide-v1",
+            "availableDiagramWidth": 930,
+            "actualBudgetPx": 930,
+            "limit": "legacy",
+            "requestedTargetPx": null,
+            "requestedTargetMet": null,
+            "hardFloorPx": 6,
+            "hardFloorMet": true,
+            "minimumOwner": {
+              "kind": "node",
+              "id": "eventos-universidad"
+            },
+            "minimumSourceTextPx": 7,
+            "minimumProjectedTextPx": 6.027777777777779,
+            "semanticTextCount": 33
+          },
+          "issues": []
+        },
+        "provenance": "current",
+        "deliveryReceiptId": "c057cd17-424c-4a36-819c-de3f68a1bd7d"
+      }
+    },
+    "browser-check": {
+      "status": "skipped",
+      "exitCode": 2,
+      "durationMs": 14,
+      "command": [
+        "/home/nja50/.nvm/versions/node/v24.21.0/bin/node",
+        "/home/nja50/.agents/skills/archify/bin/archify.mjs",
+        "browser-check",
+        "/tmp/opencode/finalize/docs/universidades-orden-creacion.html",
+        "--json",
+        "--require-provenance"
+      ],
+      "execution": "in-process",
+      "receipt": {
+        "schemaVersion": 1,
+        "ok": false,
+        "command": "browser-check",
+        "evidenceKind": "automated-browser",
+        "status": "skipped",
+        "visualReview": "not-requested",
+        "provenance": "current",
+        "deliveryReceiptId": "c057cd17-424c-4a36-819c-de3f68a1bd7d",
+        "artifact": {
+          "path": "/tmp/opencode/finalize/docs/universidades-orden-creacion.html",
+          "sha256": "bc49963b69b1e86fe674547eb3eca4804ff9c73456337695919a6fa2e8f794c6",
+          "bytes": 779450
+        },
+        "state": {
+          "detail": "read",
+          "motion": "still"
+        },
+        "chrome": {
+          "status": "unavailable",
+          "executable": null
+        },
+        "diagnostics": [
+          {
+            "code": "viewer/chrome-unavailable",
+            "severity": "warning",
+            "message": "Chrome or Chromium is unavailable. Set ARCHIFY_CHROME to its executable path.",
+            "subject": {
+              "artifact": "/tmp/opencode/finalize/docs/universidades-orden-creacion.html"
+            },
+            "evidence": {
+              "executable": null
+            },
+            "supportedFixes": [
+              "set ARCHIFY_CHROME to a Chrome or Chromium executable and rerun browser-check"
+            ]
+          }
+        ],
+        "containment": {
+          "status": "skipped",
+          "policy": "fit-or-reader-declared-readable-vertical-scroll",
+          "viewports": []
+        },
+        "themeStates": {
+          "status": "skipped",
+          "viewports": []
+        },
+        "readability": {
+          "status": "skipped",
+          "minimumProjectedNodeTextPx": 6,
+          "viewports": []
+        },
+        "viewerChrome": {
+          "status": "skipped",
+          "viewports": []
+        },
+        "captures": {
+          "status": "not-requested",
+          "screenshots": [],
+          "contactSheet": null
+        },
+        "sidecars": {
+          "receipt": "universidades-orden-creacion.browser-check.json",
+          "files": []
+        },
+        "error": "Chrome or Chromium is unavailable. Set ARCHIFY_CHROME to its executable path."
+      }
+    }
+  },
+  "diagnostics": [
+    {
+      "code": "viewer/chrome-unavailable",
+      "severity": "warning",
+      "message": "Chrome or Chromium is unavailable. Set ARCHIFY_CHROME to its executable path.",
+      "subject": {
+        "artifact": "/tmp/opencode/finalize/docs/universidades-orden-creacion.html"
+      },
+      "evidence": {
+        "executable": null
+      },
+      "supportedFixes": [
+        "set ARCHIFY_CHROME to a Chrome or Chromium executable and rerun browser-check"
+      ]
+    }
+  ],
+  "evidence": {
+    "receipt": "/tmp/opencode/finalize/docs/universidades-orden-creacion.finalize.json",
+    "summaryReceipt": "/tmp/opencode/finalize/docs/universidades-orden-creacion.finalize-summary.json",
+    "browserCheckReceipt": "/tmp/opencode/finalize/docs/universidades-orden-creacion.browser-check.json"
+  },
+  "visualReview": "not-requested",
+  "failedStage": "browser-check",
+  "finishedAt": "2026-10-01T05:29:28.036Z",
+  "durationMs": 766,
+  "update": {
+    "status": "current",
+    "installedVersion": "3.0.1",
+    "availableVersion": "3.0.1",
+    "releaseNotes": null,
+    "checkedAt": "2026-09-30T20:20:22.175Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  }
+}
