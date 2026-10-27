@@ -8,6 +8,8 @@ public record UniversityName(String value) {
     public UniversityName{
         final String normalizeValue = Objects.requireNonNull(value, "UniversityName cannot be null").trim();
         validateNotEmpty(normalizeValue);
+        validateMinumunLenght(normalizeValue);
+        validateMaximusLenght(normalizeValue);
         value = normalizeValue;
     }
 
