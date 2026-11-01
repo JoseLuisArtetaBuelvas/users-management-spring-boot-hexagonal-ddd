@@ -1,14 +1,14 @@
 package com.jcaa.usersmanagement.domain.exception;
 
-public class InvalidUniversityIdException extends RuntimeException {
-    private static final String MESSAGE_EMPTY  = "The univertsity id must not be empty";
+public final class InvalidUniversityIdException extends DomainException {
 
-    public InvalidUniversityIdException(String message) {
-        super(message);
-    }
+  private static final String MESSAGE_EMPTY = "The university id must not be empty.";
 
-    public static InvalidUniversityIdException becauseValueIsEmpty(){
-        return new InvalidUniversityIdException(MESSAGE_EMPTY);
-    }
+  private InvalidUniversityIdException(final String message) {
+    super(message);
+  }
 
+  public static InvalidUniversityIdException becauseValueIsEmpty() {
+    return new InvalidUniversityIdException(MESSAGE_EMPTY);
+  }
 }
