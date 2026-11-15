@@ -1,0 +1,42 @@
+# =============================================================
+# Ejecucion local con Docker Compose: API + MySQL 8
+#   docker compose up --build
+# API en http://localhost:8080  (Swagger: /swagger-ui.html)
+# Login: admin@example.com / Admin1234!
+# =============================================================
+services:
+  db:
+    image: mysql:8.4
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-admin}
+      MYSQL_DATABASE: crud_usuarios
+    ports:
+      - "3306:3306"
+    volumes:
+      # schema.sql se ejecuta automaticamente la primera vez que arranca MySQL
+      - ./src/main/resources/schema.sql:/docker-entrypoint-initdb.d/schema.sql:ro
+      - db-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-p${DB_PASSWORD:-admin}"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  api:
+    build: .
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DB_DRIVER: mysql
+      DB_HOST: db
+      DB_PORT: "3306"
+      DB_NAME: crud_usuarios
+      DB_USERNAME: root
+      DB_PASSWORD: ${DB_PASSWORD:-admin}
+      JWT_SECRET: ${JWT_SECRET:-ZGV2ZWxvcG1lbnQtb25seS1qd3Qtc2VjcmV0LW11c3QtYmUtcmVwbGFjZWQ=}
+    ports:
+      - "8080:8080"
+
+volumes:
+  db-data:
