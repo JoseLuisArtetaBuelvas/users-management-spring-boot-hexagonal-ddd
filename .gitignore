@@ -41,3 +41,8 @@ build/
 *.log
 
 /spec/
+
+### Variables de entorno locales (no subir secretos) ###
+.env
+.env.*
+!.env.example

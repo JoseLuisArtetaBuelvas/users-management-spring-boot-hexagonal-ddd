@@ -1,0 +1,28 @@
+# =============================================================
+# Blueprint de Render. Los valores con "sync: false" se piden al
+# crear el servicio (no se guardan secretos en el repositorio).
+# =============================================================
+services:
+  - type: web
+    name: users-management-universidades
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /v3/api-docs
+    envVars:
+      - key: DB_DRIVER
+        value: postgresql
+      - key: DB_HOST
+        sync: false        # aws-1-<region>.pooler.supabase.com (Session pooler)
+      - key: DB_PORT
+        value: "5432"
+      - key: DB_NAME
+        value: postgres
+      - key: DB_USERNAME
+        sync: false        # postgres.<id-del-proyecto>
+      - key: DB_PASSWORD
+        sync: false        # clave de la base de datos de Supabase
+      - key: DB_SSL_MODE
+        value: require
+      - key: JWT_SECRET
+        generateValue: true
