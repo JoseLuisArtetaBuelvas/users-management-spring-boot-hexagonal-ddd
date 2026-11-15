@@ -63,3 +63,11 @@ docker compose up --build
 ## Integración continua
 
 `.github/workflows/ci.yml` compila y ejecuta las pruebas (`mvn verify`) en cada push y pull request, y construye la imagen Docker. Render despliega automáticamente cada commit que llega a `main` (*Auto-Deploy*).
+## Pruebas con Postman
+
+En `postman/` están la colección y dos entornos:
+
+- `users-management-universidades.postman_collection.json`: login (guarda `{{token}}`) y CRUDL de universidades (la creación guarda `{{universityId}}`), con pruebas de código de estado: 401, 200, 201, 409, 400, 204 y 404.
+- `local.postman_environment.json` (`http://localhost:8080`) y `render.postman_environment.json` (reemplazar la URL por la del servicio en Render).
+
+En Postman: *Import* → seleccionar los tres archivos → elegir el entorno → *Run collection* (en orden).
