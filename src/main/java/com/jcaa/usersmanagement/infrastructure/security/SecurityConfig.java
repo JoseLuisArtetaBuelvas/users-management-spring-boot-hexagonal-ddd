@@ -13,6 +13,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableConfigurationProperties(JwtProperties.class)
 public class SecurityConfig {
 
+  private static final String ROOT_PATH = "/";
   private static final String AUTH_LOGIN_PATH = "/api/auth/login";
   private static final String USERS_PATH = "/api/users";
   private static final String USERS_DETAIL_PATH = "/api/users/**";
@@ -42,6 +43,8 @@ public class SecurityConfig {
         .authorizeHttpRequests(
             authorization ->
                 authorization
+                    .requestMatchers(HttpMethod.GET, ROOT_PATH)
+                    .permitAll()
                     .requestMatchers(AUTH_LOGIN_PATH)
                     .permitAll()
                     .requestMatchers(OPEN_API_PATHS)
