@@ -21,12 +21,14 @@ CREATE TABLE IF NOT EXISTS users (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Usuario administrador inicial (password: Admin1234!)
-INSERT INTO users (id, name, email, password, role, status)
+-- Hash BCrypt real (cost 12, generado con at.favre.lib:bcrypt, igual que UserPassword).
+-- INSERT IGNORE permite ejecutar el script varias veces sin error de clave duplicada.
+INSERT IGNORE INTO users (id, name, email, password, role, status)
 VALUES (
     '00000000-0000-0000-0000-000000000001',
     'Administrador',
     'admin@example.com',
-    '$2a$12$placeholderHashReplaceWithRealBCryptHash',
+    '$2a$12$hO1y1eGHaNCpqHg0ydkmjudjuSSd2PSygrf9.xGYaSXgA/c2Ugh9q',
     'ADMIN',
     'ACTIVE'
 );
